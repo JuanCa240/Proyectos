@@ -13,12 +13,12 @@ public class Main {
     
     public void Menu(){
         
-       System.out.println("Introduce un número: ");
+      System.out.println("Introduce un número: ");
       
-      int numero1 = teclado.nextInt();
+      int numero = teclado.nextInt();
                     
       System.out.println("Introduce otro número: ");       
-      int numero2 = teclado.nextInt();
+      int numero1 = teclado.nextInt();
       
       boolean iteracion = true;
       while(iteracion){
@@ -31,19 +31,15 @@ public class Main {
           int opcion = teclado.nextInt();
           
           switch(opcion){
-              case 1: System.out.println("La suma es de " + operaciones.calulcarSuma(numero1, numero2)+ "\n");
+              case 1: System.out.println("La suma es de " + operaciones.calulcarSuma(numero, numero1)+ "\n");
               break;
               
-              case 2: System.out.println("La resta es de: " + operaciones.calcularResta(numero1, numero2)+ "\n");
+              case 2: System.out.println("La resta es de: " + operaciones.calcularResta(numero, numero1)+ "\n");
               break;
               
-              case 3: System.out.println("La multiplicacion es de: " + operaciones.calcularMultiplicacion(numero1, numero2)+ "\n");
+              case 3: System.out.println("La multiplicacion es de: " + operaciones.calcularMultiplicacion(numero, numero1)+ "\n");
               break;
               
-              case 4: System.out.println("La división es de " + operaciones.caluclarDivision(numero1, numero2)+ "\n");
-              break;
-              
-              case 5: System.out.println("Error ingrese un valor correcto");
               default:
               
           }             
