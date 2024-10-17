@@ -68,11 +68,11 @@ public class Empleado {
     }
 
     public boolean setSalarioBase(double salarioBase) {
-    if (salarioBase < 0) {
-        return false;  
-    }
-    
-    this.salarioBase = salarioBase;
-    return true;  
-}    
+        if (salarioBase < 0) {
+            return false;  
+        }
+        
+        this.salarioBase = salarioBase;
+        return true;  
+    }    
 }
