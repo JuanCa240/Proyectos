@@ -1,6 +1,8 @@
 package TallerXML1;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FormularioProducto extends JDialog{
      private JTextField txtCodigo, txtNombre, txtPrecio, txtCategoria;
@@ -41,7 +43,12 @@ public class FormularioProducto extends JDialog{
             txtCategoria.setText(producto.getCategoria());
         }
 
-        botonGuardar.addActionListener(e -> guardarProducto());
+       botonGuardar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                guardarProducto();
+            }
+        });
     }
 
     public void guardarProducto() {
