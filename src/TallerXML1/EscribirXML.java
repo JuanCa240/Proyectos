@@ -21,7 +21,9 @@ public class EscribirXML {
             Element root = documento.createElement("Productos");
             documento.appendChild(root);
 
-            for (Producto producto : productos) {
+            for (int i = 0; i < productos.size(); i++) {
+                Producto producto = productos.get(i);
+
                 Element productoElemento = documento.createElement("Producto");
 
                 Element codigo = documento.createElement("Codigo");
@@ -57,4 +59,5 @@ public class EscribirXML {
         }
     }
 }
+
 
