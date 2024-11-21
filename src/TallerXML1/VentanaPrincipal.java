@@ -34,11 +34,29 @@ public class VentanaPrincipal extends JFrame {
         add(panelBotones, BorderLayout.SOUTH);
 
         cargarProductosDesdeXML("C:\\Users\\Juan Camilo\\OneDrive\\Documentos\\NetBeansProjects\\Semestre 3\\producto.xml");
-        
-        botonAgregar.addActionListener(e -> agregarProducto());
-        botonModificar.addActionListener(e -> modificarProducto());
-        botonEliminar.addActionListener(e -> eliminarProducto());
+
+         botonAgregar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                agregarProducto();
+            }
+        });
+
+        botonModificar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                modificarProducto();
+            }
+        });
+
+        botonEliminar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                eliminarProducto();
+            }
+        });
     }
+    
     
     private void cargarProductosDesdeXML(String archivoXML) {
         LeerXML leerXML = new LeerXML();
@@ -46,7 +64,8 @@ public class VentanaPrincipal extends JFrame {
        
         modelo.setRowCount(0);
 
-        for (Producto producto : listaProductos) {
+       for (int i = 0; i < listaProductos.size(); i++) {
+            Producto producto = listaProductos.get(i);
             modelo.addRow(new Object[]{producto.getCodigo(), producto.getNombre(), producto.getPrecio(), producto.getCategoria()});
         }
     }
@@ -98,7 +117,8 @@ public class VentanaPrincipal extends JFrame {
     }
 
     modelo.setRowCount(0); 
-    for (Producto producto : listaProductos) {
+   for (int i = 0; i < listaProductos.size(); i++) {
+        Producto producto = listaProductos.get(i);
         modelo.addRow(new Object[]{producto.getCodigo(), producto.getNombre(), producto.getPrecio(), producto.getCategoria()});
     }
     guardarXML(); 
